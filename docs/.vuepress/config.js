@@ -1,3 +1,5 @@
+const secret = require('./config/secret')
+
 module.exports = {
   title: '网站的title',
   description: '网站的description',
@@ -14,19 +16,28 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/apple-icon-144x144-seochecker-manifest-420.jpg' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   plugins: {
     '@vuepress/pwa': {
-      serviceWorker: true,
-      updatePopup:  true,
+      serviceWorker: false,
+      updatePopup:  false,
       popupComponent: 'SWUpdatePopup'
     }, 
     '@vssue/vuepress-plugin-vssue': {
       platform: 'github-v4',
       owner: 'zhouwangwang',
       repo: 'zhouwangwang.github.io',
-      clientId: '4db68676a826f0f0fb0a',
-      clientSecret: '23fe50826548125027e0a8c80b6e927bc1d3b72e',
+      clientId: secret.clientId,
+      clientSecret: secret.clientSecret,
       autoCreateIssue: true
+    },
+    '@vuepress/back-to-top': true,
+    '@vuepress/plugin-google-analytics': {
+      'id': secret.ga
     }
 } ,
   themeConfig: {
