@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/vuepress-starter/',
   title: '网站的title',
   description: '网站的description',
   head: [
