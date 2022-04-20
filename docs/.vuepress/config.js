@@ -13,7 +13,7 @@ module.exports = {
   },
   themeConfig: {
     logo: '/assets/img/logo.png',
-    lastUPdated: 'Last Updated',
+    lastUpdated: '上次更新',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
